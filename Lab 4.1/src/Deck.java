@@ -13,15 +13,15 @@ public class Deck {
 			{
 				for(int k = 0; k < pointVals.length; k++)
 				{
-					unDealt.add(Card);
+					unDealt.add(new Card(ranks[i], suits[j], pointVals[k]));
 				}
 			}
 		}
 	}
 
-	public boolean isEmpty()
+	public boolean isEmpty(ArrayList<Card> deck)
 	{
-		if(unDealt.size() == 0)
+		if(deck.size() == 0)
 		{
 			return true;
 		}
@@ -35,6 +35,20 @@ public class Deck {
 	
 	public Card deal()
 	{
+		if(unDealt.isEmpty())
+		{
+			return null;
+		}
+		else
+		{
+			Card card1 = 
+			unDealt.remove();
+		}
+	}
+	public ArrayList<Card> shuffle()
+	{
+		ArrayList<Integer> shuffledDeck = new ArrayList<Integer>();
+		
 		
 	}
 	
