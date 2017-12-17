@@ -41,14 +41,22 @@ public class Deck {
 		}
 		else
 		{
-			Card card1 = 
-			unDealt.remove();
+			Card card1 = unDealt.get(0);
+			unDealt.remove(card1);
+			return card1;
 		}
 	}
 	public ArrayList<Card> shuffle()
 	{
-		ArrayList<Integer> shuffledDeck = new ArrayList<Integer>();
-		
+		ArrayList<Card> shuffledDeck = new ArrayList<Card>();
+		for(int i = Dealt.size()-1; i > 0; i--)
+		{
+			int r = (int)(Math.random() * i+1);
+			Card temp = Dealt.get(i);
+			Dealt.get(i) = Dealt.get(r);
+			Dealt.get(r)= temp;
+		}
+		return shuffledDeck;
 		
 	}
 	
